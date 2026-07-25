@@ -1,7 +1,7 @@
 import urllib.request
 import json
 
-url = "https://api-inference.huggingface.co/models/premgouda1916/kannada-sentiment-classifier-Xlm_RoBERTa"
+url = "https://router.huggingface.co/hf-inference/models/premgouda1916/kannada_sentiment_classifier_Xlm_RoBERTa"
 data = {"inputs": "ನನಗೆ ತುಂಬಾ ಸಂತೋಷವಾಗಿದೆ"}
 headers = {"Content-Type": "application/json"}
 

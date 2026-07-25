@@ -38,7 +38,7 @@ print("=" * 60)
 print("LOADING KANNADA EMOTION CLASSIFIER (PyTorch)")
 print("=" * 60)
 # Try to load local model first. If model.safetensors is missing (e.g. on GitHub), fall back to Hugging Face Hub.
-HF_MODEL_ID = "premgouda1916/kannada-sentiment-classifier-Xlm_RoBERTa" # <-- Replace with your actual Hugging Face ID!
+HF_MODEL_ID = "premgouda1916/kannada_sentiment_classifier_Xlm_RoBERTa" # <-- Replace with your actual Hugging Face ID!
 
 local_weights_path = os.path.join(MODEL_DIR, "model.safetensors")
 if os.path.exists(MODEL_DIR) and os.path.exists(local_weights_path):
