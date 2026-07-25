@@ -238,10 +238,10 @@
     <div class="subtitle">Powered by Fine-tuned XLM-RoBERTa Serverless API</div>
 
     <div class="form-group">
-      <label for="tokenInput">Hugging Face Access Token (Optional):</label>
+      <label for="tokenInput">Hugging Face Access Token (Required):</label>
       <input type="text" id="tokenInput" placeholder="hf_..." />
       <span class="token-info">
-        Optional but recommended to avoid rate limits. Get a free token from your 
+        Required to query the Hugging Face API directly from your browser. Get a free token from your 
         <a href="https://huggingface.co/settings/tokens" target="_blank">HF Token Settings</a>.
       </span>
     </div>
@@ -312,23 +312,24 @@
         return;
       }
 
+      const token = tokenInput.value.trim();
+      if (!token) {
+        showError('Hugging Face Access Token is required to make inference calls directly from the browser. Please enter your token above.');
+        return;
+      }
+
       setLoading(true);
       hideError();
       resultBox.style.display = 'none';
 
       // Save token locally for convenience
-      const token = tokenInput.value.trim();
-      if (token) {
-        localStorage.setItem('hf_token', token);
-      } else {
-        localStorage.removeItem('hf_token');
-      }
+      localStorage.setItem('hf_token', token);
 
       try {
-        const headers = { 'Content-Type': 'application/json' };
-        if (token) {
-          headers['Authorization'] = `Bearer ${token}`;
-        }
+        const headers = { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        };
 
         const modelUrl = 'https://api-inference.huggingface.co/models/premgouda1916/kannada-sentiment-classifier-Xlm_RoBERTa';
         const res = await fetch(modelUrl, {
