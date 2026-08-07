@@ -331,7 +331,7 @@
           'Authorization': `Bearer ${token}`
         };
 
-        const modelUrl = 'https://router.huggingface.co/hf-inference/models/premgouda1916/kannada_sentiment_classifier_Xlm_RoBERTa';
+        const modelUrl = 'https://api-inference.huggingface.co/models/premgouda1916/kannada_sentiment_classifier_Xlm_RoBERTa';
         const res = await fetch(modelUrl, {
           method: 'POST',
           headers: headers,
