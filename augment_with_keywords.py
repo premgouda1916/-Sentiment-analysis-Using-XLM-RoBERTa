@@ -19,7 +19,7 @@ TEMPLATES = [
     "{keyword} ಅನಿಸುತ್ತಿದೆ",      # Feeling {keyword}
 ]
 
-DATA_DIR = "d:/Mini project/chatgpt"
+DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 FILES = {
     "joy": "joy_sentences_2000_kannada.txt",
     "anger": "anger_sentences_2000_kannada.txt",

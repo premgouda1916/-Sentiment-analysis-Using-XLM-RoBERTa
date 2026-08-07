@@ -21,4 +21,4 @@ ENV PORT=7860
 EXPOSE 7860
 
 # Run the application
-CMD ["python", "app.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:7860", "app:app"]

@@ -9,7 +9,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 MODEL_DIR = "./kannada_emotion_model_xlm"
 # Try to load local model first. If model.safetensors is missing (e.g. on GitHub), fall back to Hugging Face Hub.
-HF_MODEL_ID = "premgouda1916/kannada_sentiment_classifier_Xlm_RoBERTa" # <-- Replace with your actual Hugging Face ID!
+HF_MODEL_ID = "premgouda1916/kannada-sentiment-classifier-Xlm_RoBERTa" # <-- Replace with your actual Hugging Face ID!
 
 ID2LABEL = {
     0: "joy",
