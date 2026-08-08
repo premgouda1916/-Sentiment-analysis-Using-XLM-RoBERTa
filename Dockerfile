@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install packages required for conversion
 RUN pip install --no-cache-dir \
-    torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu \
+    torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir \
     transformers==4.39.3 \
     onnx==1.15.0 \
     onnxruntime==1.17.3
