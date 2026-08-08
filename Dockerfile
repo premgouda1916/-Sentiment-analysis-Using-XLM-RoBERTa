@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir \
     torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir \
+    numpy==1.26.4 \
     transformers==4.39.3 \
     onnx==1.15.0 \
     onnxruntime==1.17.3
